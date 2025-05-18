@@ -75,7 +75,7 @@ class SoftHLayer(nn.Module):
         n (int): Number of breakpoints or bins in each piecewise function.
         temperature (float, optional): Temperature for softmax weighting. Lower values
                                        make the output more similar to hard bin selection.
-                                       Default: 1.0.
+                                       Default: 1.5.
         a (float, optional): Lower bound of the input domain for breakpoints. Default: -1.0.
         b (float, optional): Upper bound of the input domain for breakpoints. Default: 1.0.
 
@@ -92,7 +92,7 @@ class SoftHLayer(nn.Module):
         >>> y = layer(x)  # shape: (4, 3)
     """
 
-    def __init__(self, input_size, output_size, n, temperature=1.0, a=-1.0, b=1.0):
+    def __init__(self, input_size, output_size, n, temperature=1.5, a=-1.0, b=1.0):
         super().__init__()
         self.output_size = output_size
         self.temperature = temperature
