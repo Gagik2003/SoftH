@@ -28,7 +28,7 @@ class HFunction(nn.Module):
     """
 
     def __init__(self, n):
-        super(HFunction, self).__init__()
+        super().__init__()
         self.n = n
         self.values = nn.Parameter(torch.randn(n))
 
